@@ -140,8 +140,8 @@ class IonCtDNA(IonPlugin):
             for chr, pos, ref, reads_all, reads_A, reads_C, reads_T, reads_G, reads_N, dele, ins in posInterest:
                 ACTG = [int(reads_A), int(reads_C), int(reads_T), int(reads_G)]
                 gene = targets[chr][int(pos)]
-                if min_cov_obs > int(reads_all):
-                    min_cov_obs = reads_all
+                if int(min_cov_obs) > int(reads_all):
+                    min_cov_obs = int(reads_all)
                 
                 worksheet.write(row, col,             gene)
                 worksheet.write(row, col +1 ,         chr)
