@@ -192,11 +192,11 @@ class IonCtDNA(IonPlugin):
                     
                     # summary part
                     if not summary_nucl.has_key(chr):
-                        summary_nucl[chr]={pos: [gene, ref, value04]}
+                        summary_nucl[chr]={pos: [gene, ref, "%.4f" % value04]}
                     elif not summary_nucl[chr].has_key(pos):
-                        summary_nucl[chr].update({pos: [gene, ref, value04]})
+                        summary_nucl[chr].update({pos: [gene, ref, "%.4f" % value04]})
                     else:
-                        summary_nucl[chr][pos].append(value04)
+                        summary_nucl[chr][pos].append("%.4f" % value04)
                 
                 else:
                     if not summary_indels.has_key(chr):
