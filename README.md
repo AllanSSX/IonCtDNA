@@ -25,9 +25,16 @@ The BED file needs to be properly formatted. It's composes of 4 columns:
 - 3 / End
 - 4 / Gene/mutation name
 
-It's capable to take intervals (for deletions):
+By default, only the base from the start position is taken into account. But the script it's capable to deal with intervals (for deletions).
 
 `chr7	55241707	55241708	EGFR_2155`  
 `chr7	55241708	55241709	EGFR_2156`  
 `chr7	55242470	55242475	DelE19` # deletion  
 
+## 3 Adapt the script for your purpose
+
+To run the script, you have to make 3 main modifications.
+
+#### 3.1 Modified the input BED file
+
+The localisation of the BED file is hardcoded into the variable `self.target`  
