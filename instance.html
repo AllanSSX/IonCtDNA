@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html>
 <html>
 <head>
     <script type="text/javascript" src="/site_media/jquery/js/jquery-1.7.2.min.js">
@@ -13,6 +15,11 @@
         form select#samples {
             height : 200px;
         }
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            }
+            .center { margin-left:auto; margin-right:auto; }
     </style>
 </head> 
 <body>
@@ -45,22 +52,10 @@
                 });
             }
         });
-        
-    ////Serializer 
-    //function serializeForm(){
-    //    var x = $("#myform").serializeArray();
-    //    array = []
-    //    $.each(x, function (index, item) {
-    //        console.debug(item["value"]);
-    //        array.push(item["value"]);
-    //    })
-    //    return array;
-    //}
-    
+       
         // Post Button action 
         $("#postButton").click(function() {
             obj = {} 
-            //obj["items"] = serializeForm();
             obj["items"] = []
             $("#samples :selected").each(function(i, element) {
                 var value = $(element).val();
@@ -89,13 +84,18 @@
     });
 
 </script>
-    CONFIG INSTANCE 
-    <!-- Le reste du contenu -->
-    <div> 
+    <!--CONFIG INSTANCE-->
+    <div style="text-align:center">
+        <h1>Torrent circulating tumor DNA plugin</h1>
+    </div>
+    <div>
+        <b>Select BAM file(s) to analyse:</b>
         <form id="myform">
             <select id="samples" name="bamList" multiple></select>
-            <input type="button" id="postButton" value="start">
         </form>
+    </div>
+    <div>
+        <input type="button" id="postButton" value="start">
     </div>
 </body>
 </html>
