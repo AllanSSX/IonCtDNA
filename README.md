@@ -8,9 +8,9 @@ Tools used from other projects are shown below.
 
 - Samtools
 - Bcftools
-- Python
---pysam
---pysamstats
---xlsxwriter
---django
+- Python   
+--pysam   
+--pysamstats  
+--xlsxwriter   
+--django   
 
