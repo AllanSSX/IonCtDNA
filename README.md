@@ -37,7 +37,7 @@ To run the script, you have to make 3 main modifications.
 
 #### 3.1 Modify the localisation of the BED
 
-The localisation of the BED file is hardcoded into the variable `self.target`  .
+The localisation of the BED file is hardcoded into the variable `self.target`.
 
 #### 3.2 Case of indels
 
@@ -46,4 +46,10 @@ You need to specify manually the range of indels. It will be used after to separ
 #### 3.3 Excel formulas
 
 The script generate 1 Excel file per sample. The formula to compute the ratio between the noise and the mutation (N column) is specific to our group and is variable for each position. You need to modify `formula_noise_mut` dictionary according to your BED file. The dictionnary key correspond to the position into the output Excel file.
-You don't care about deletions, nothing is calculated for these.
+You don't care about deletions, nothing is calculated in this case.
+
+## 4 Future work
+
+- Possibility to select the BED
+- Make a dictionary of formulas for each BED
+- Automatically select the correct dictionary of formulas according the BED name
