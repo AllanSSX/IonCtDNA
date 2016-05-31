@@ -6,8 +6,8 @@ This document is meant to guide you to adapt the code for your personnal usage.
 ## 1 Tools and dependencies
 Tools used from other projects are shown below.
 
-- samtools
-- bcftools
+- Samtools
+- Bcftools
 - Python
 --pysam
 --pysamstats
