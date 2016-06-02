@@ -45,8 +45,8 @@ The script generate 1 Excel file per sample. The formula to compute the ratio be
 
 For example: 
 
-|```chrom	|   pos |	ref |	reads_all   |	A   |	C   |	T   |	G```|  
-|```chr7	55241707	G	7994	2	0	0	7992```
+|chrom	|   pos |	ref |	reads_all   |	A   |	C   |	T   |	G|  
+```chr7	55241707	G	7994	2	0	0	7992```
 
 Known  mutations: G -> C/T/A  
 Associated formula: =LARGE(E2:H2,2)
