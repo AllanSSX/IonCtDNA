@@ -51,7 +51,7 @@ chrom | pos | ref | reads | A | C | T | G
 chr7 | 55241707 | G | 7994 | 2 | 0 | 0 | 7992
 
 
-+Known  mutations:+ G -> C/T/A  
+++Known  mutations:++ G -> C/T/A  
 +Associated formula:+ **=LARGE(E2:H2,2)**
 
 chrom | pos | ref | reads | A | C | T | G
