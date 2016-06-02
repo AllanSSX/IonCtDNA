@@ -46,10 +46,9 @@ The script generate 1 Excel file per sample. The formula to compute the ratio be
 For example:
 
 
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+chrom | pos | ref | reads_all | A | C | T | G
+----- | --- | --- | --------- | - | - | - | -
+chr7 | 55241707 | G | 7994 | 2 | 0 | 0 | 7992
 
 
 `chrom	pos	ref	reads_all	A	C	T	G`  
