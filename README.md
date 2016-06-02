@@ -54,11 +54,15 @@ chr7 | 55241707 | G | 7994 | 2 | 0 | 0 | 7992
 Known  mutations: G -> C/T/A  
 Associated formula: =LARGE(E2:H2,2)
 
+chrom | pos | ref | reads | A | C | T | G
+----- | --- | --- | ----- | --- | --- | --- | ---
 chr7 | 55241708 | G | 7992 | 13 | 0 | 0 | 7979
 
 Known  mutations: G -> C/A  
 Associated formula: =LARGE(E2:F2,1)
 
+chrom | pos | ref | reads | A | C | T | G
+----- | --- | --- | ----- | --- | --- | --- | ---
 chr7 | 55249071 | C | 7840 | 0 | 7833 | 7 | 0
 
 Known  mutation: C -> T  
