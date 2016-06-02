@@ -41,7 +41,7 @@ The localisation of the BED file is hardcoded into the variable `self.target`.
 
 #### 3.2 Excel formulas
 
-The script generate 1 Excel file per sample. The formula to compute the ratio between the noise and the mutation(s) of interest (N column) is specific to each position (depending of the number of known mutations: A -> C; A -> C/T; A -> C/T/G). You need to modify `formula_noise_mut` dictionary according to your BED file.
+The script generate 1 Excel file per sample. The formula to compute the ratio between the *noise and the mutation(s)* of interest (N column) is specific to each position (depending of the number of known mutations: A -> C; A -> C/T; A -> C/T/G). You need to modify `formula_noise_mut` dictionary according to your BED file and known mutations.
 
 For example:
 
@@ -68,7 +68,7 @@ chr7 | 55249071 | C | 7840 | 0 | 7833 | 7 | 0
 Known  mutation: C -> T  
 Associated formula: **=G9**
 
-The dictionnary key correspond to the position into the output Excel file. The simplest solution consists to run a first time the plugin without compute any formulas and thereby get the line corresponding to each gene.
+The dictionnary key correspond to the position into the Excel file. The simplest way solution consists to run a first time the plugin without compute any formulas and thereby get the line corresponding to each gene.
 An important thing with this formula: we always assume that the reference nucleotide recrute the largest number of reads.
 
 You don't care about deletions, nothing is calculated in this case.
