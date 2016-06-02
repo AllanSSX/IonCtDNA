@@ -46,7 +46,8 @@ The script generate 1 Excel file per sample. The formula to compute the ratio be
 For example:
 
 
-chrom | pos | ref 
+chrom | pos | ref
+------ | ------ | ------
 
 
 `chrom	pos	ref	reads_all	A	C	T	G`  
