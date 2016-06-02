@@ -43,7 +43,14 @@ The localisation of the BED file is hardcoded into the variable `self.target`.
 
 The script generate 1 Excel file per sample. The formula to compute the ratio between the noise and the mutation(s) of interest (N column) is specific to each position (depending of the number of known mutations: A -> C; A -> C/T; A -> C/T/G). You need to modify `formula_noise_mut` dictionary according to your BED file.
 
-For example: plop
+For example:
+
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
 
 `chrom	pos	ref	reads_all	A	C	T	G`  
 `chr7	55241707	G	7994	2	0	0	7992`
