@@ -47,7 +47,8 @@ For example:
 
 
 chrom | pos | ref
------- | ------ | ------
+----- | --- | ---
+chr7 | 55241707 | G
 
 
 `chrom	pos	ref	reads_all	A	C	T	G`  
