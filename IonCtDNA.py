@@ -41,10 +41,11 @@ class IonCtDNA(IonPlugin):
             item["excel"]   = self.urlPlugin + "/" + sample + "_" + self.date +".xlsx" 
             
             files.append(item)
-
+            
         # 3 / Get targets
         readBED = open(self.target, "r") 
         targets = {}
+        indels = {}
         
         for target in readBED:
             chr, start, end, gene = target.split()[0:4]
@@ -54,6 +55,12 @@ class IonCtDNA(IonPlugin):
                 targets[chr]=dict((nucl,gene) for nucl in pos)
             else:
                 targets[chr].update((nucl,gene) for nucl in pos)
+            
+            if len(pos) > 1:
+                if not indels.has_key(chr):
+                    indels[chr] = pos
+                else:
+                    targets[chr].extend(pos)
 
         # 4 / Loop on each files
         summary_nucl = {}
@@ -83,10 +90,6 @@ class IonCtDNA(IonPlugin):
             min_cov = 5000
             min_allelic_ratio = 0.005
             min_cov_obs = 8000
-            
-            # Indel positions
-            #--> replace by a dict to avoid conflict when using all chromosomes
-            indel = range(55242470,55242475)
             
             # Formula
             #--> to update by user when the bed is modifed
@@ -156,8 +159,15 @@ class IonCtDNA(IonPlugin):
                 worksheet.write_number(row, col + 10, int(dele))
                 worksheet.write_number(row, col + 11, int(ins))
                 
-                if not int(pos) in indel:
-                # --> to update when indel will by a dict
+                if indels.has_key(chr) and int(pos) in indels[chr]:
+                    if not summary_indels.has_key(chr):
+                        summary_indels[chr]={pos: [gene, '', dele]}
+                    elif not summary_indels[chr].has_key(pos):
+                        summary_indels[chr].update({pos: [gene, '', dele]})
+                    else:
+                        summary_indels[chr][pos].append(dele)
+                
+                else:
                     #--> to update by user when the bed is modifed
                     # M
                     formula = '=LARGE(F%d:I%d,1)' % (row+1, row+1)
@@ -198,14 +208,6 @@ class IonCtDNA(IonPlugin):
                     else:
                         summary_nucl[chr][pos].append("%.4f" % value04)
                 
-                else:
-                    if not summary_indels.has_key(chr):
-                        summary_indels[chr]={pos: [gene, '', dele]}
-                    elif not summary_indels[chr].has_key(pos):
-                        summary_indels[chr].update({pos: [gene, '', dele]})
-                    else:
-                        summary_indels[chr][pos].append(dele)
-                        
                 row += 1
             summary_cov.append(min_cov_obs)
             workbook.close()
